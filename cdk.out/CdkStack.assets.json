@@ -1,0 +1,20 @@
+{
+  "version": "36.0.25",
+  "files": {
+    "30d5b28da67c7bbe642de53878f2bbbcb9666dd23a1466593ae260c17e6af409": {
+      "source": {
+        "path": "CdkStack.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "829361583088-us-east-1": {
+          "bucketName": "cf-templates-a7t5ukt2vf0j-us-east-1",
+          "objectKey": "30d5b28da67c7bbe642de53878f2bbbcb9666dd23a1466593ae260c17e6af409.json",
+          "region": "us-east-1",
+          "assumeRoleArn": "arn:aws:iam::829361583088:role/LabRole"
+        }
+      }
+    }
+  },
+  "dockerImages": {}
+}

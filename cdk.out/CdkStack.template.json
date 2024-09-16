@@ -1,0 +1,109 @@
+{
+ "Resources": {
+  "cdkTypescriptInstanceInstanceProfileAF2EEB73": {
+   "Type": "AWS::IAM::InstanceProfile",
+   "Properties": {
+    "Roles": [
+     "LabRole"
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "CdkStack/cdkTypescriptInstance/InstanceProfile"
+   }
+  },
+  "cdkTypescriptInstanceA5F933D3": {
+   "Type": "AWS::EC2::Instance",
+   "Properties": {
+    "AvailabilityZone": "us-east-1b",
+    "IamInstanceProfile": {
+     "Ref": "cdkTypescriptInstanceInstanceProfileAF2EEB73"
+    },
+    "ImageId": "ami-0aa28dab1f2852040",
+    "InstanceType": "t2.micro",
+    "KeyName": "vockey",
+    "NetworkInterfaces": [
+     {
+      "AssociatePublicIpAddress": true,
+      "DeviceIndex": "0",
+      "GroupSet": [
+       "sg-00126df5add75d7aa"
+      ],
+      "SubnetId": "subnet-0abdebf80548bab6a"
+     }
+    ],
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "CdkStack/cdkTypescriptInstance"
+     }
+    ],
+    "UserData": {
+     "Fn::Base64": "#!/bin/bash\ngit clone https://github.com/RodrigoLiC/webplantilla.git /var/www/html/webplantilla\ngit clone https://github.com/RodrigoLiC/websimple.git /var/www/html/websimple"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "CdkStack/cdkTypescriptInstance/Resource"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/zPSMzS10DNQTCwv1k1OydbNyUzSqw4uSUzO1glKLc4vLUpO1QHKxVenJhvpVXvmFZck5gGFnNPyYOxanczEXD0kgYCi/LTMHKA4UMy/tKSgtATEgplWq5OXn5Kql1WsX2ZkpGeqZ6iYVZyZqVtUmleSmZuqFwShAba2RqqXAAAA"
+   },
+   "Metadata": {
+    "aws:cdk:path": "CdkStack/CDKMetadata/Default"
+   }
+  }
+ },
+ "Outputs": {
+  "InstanceId": {
+   "Description": "ID de la instancia EC2",
+   "Value": {
+    "Ref": "cdkTypescriptInstanceA5F933D3"
+   }
+  },
+  "InstancePublicIP": {
+   "Description": "IP pública de la instancia EC2",
+   "Value": {
+    "Fn::GetAtt": [
+     "cdkTypescriptInstanceA5F933D3",
+     "PublicIp"
+    ]
+   }
+  }
+ },
+ "Parameters": {
+  "BootstrapVersion": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/cdk-bootstrap/hnb659fds/version",
+   "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
+  }
+ },
+ "Rules": {
+  "CheckBootstrapVersion": {
+   "Assertions": [
+    {
+     "Assert": {
+      "Fn::Not": [
+       {
+        "Fn::Contains": [
+         [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+         ],
+         {
+          "Ref": "BootstrapVersion"
+         }
+        ]
+       }
+      ]
+     },
+     "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."
+    }
+   ]
+  }
+ }
+}

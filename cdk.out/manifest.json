@@ -1,0 +1,170 @@
+{
+  "version": "36.0.25",
+  "artifacts": {
+    "CdkStack.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "CdkStack.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "CdkStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://829361583088/us-east-1",
+      "properties": {
+        "templateFile": "CdkStack.template.json",
+        "terminationProtection": false,
+        "validateOnSynth": false,
+        "assumeRoleExternalId": "arn:aws:iam::829361583088:role/LabRole",
+        "assumeRoleArn": "arn:aws:iam::829361583088:role/LabRole",
+        "cloudFormationExecutionRoleArn": "arn:aws:iam::829361583088:role/LabRole",
+        "stackTemplateAssetObjectUrl": "s3://cf-templates-a7t5ukt2vf0j-us-east-1/30d5b28da67c7bbe642de53878f2bbbcb9666dd23a1466593ae260c17e6af409.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "CdkStack.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::829361583088:role/cdk-hnb659fds-lookup-role-829361583088-us-east-1",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "CdkStack.assets"
+      ],
+      "metadata": {
+        "/CdkStack/ExistingVPC/PublicSubnet1": [
+          {
+            "type": "aws:cdk:warning",
+            "data": "No routeTableId was provided to the subnet 'subnet-0abdebf80548bab6a'. Attempting to read its .routeTable.routeTableId will return null/undefined. (More info: https://github.com/aws/aws-cdk/pull/3171) [ack: @aws-cdk/aws-ec2:noSubnetRouteTableId]",
+            "trace": [
+              "Annotations.addMessage (/Users/stewart/cloud/cdk_cloud/node_modules/aws-cdk-lib/core/lib/annotations.js:1:1608)",
+              "Annotations.addWarningV2 (/Users/stewart/cloud/cdk_cloud/node_modules/aws-cdk-lib/core/lib/annotations.js:1:825)",
+              "new ImportedSubnet (/Users/stewart/cloud/cdk_cloud/node_modules/aws-cdk-lib/aws-ec2/lib/vpc.js:1:34578)",
+              "Function.fromSubnetAttributes (/Users/stewart/cloud/cdk_cloud/node_modules/aws-cdk-lib/aws-ec2/lib/vpc.js:1:22562)",
+              "/Users/stewart/cloud/cdk_cloud/node_modules/aws-cdk-lib/aws-ec2/lib/util.js:1:2221",
+              "Array.map (<anonymous>)",
+              "ImportSubnetGroup.import (/Users/stewart/cloud/cdk_cloud/node_modules/aws-cdk-lib/aws-ec2/lib/util.js:1:2139)",
+              "new ImportedVpc (/Users/stewart/cloud/cdk_cloud/node_modules/aws-cdk-lib/aws-ec2/lib/vpc.js:1:31644)",
+              "Function.fromVpcAttributes (/Users/stewart/cloud/cdk_cloud/node_modules/aws-cdk-lib/aws-ec2/lib/vpc.js:1:8213)",
+              "new CdkTypescriptStack (/Users/stewart/cloud/cdk_cloud/lib/cdk_cloud-stack.ts:25:33)",
+              "Object.<anonymous> (/Users/stewart/cloud/cdk_cloud/bin/cdk_cloud.ts:7:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1504:14)",
+              "Module.m._compile (/Users/stewart/cloud/cdk_cloud/node_modules/ts-node/src/index.ts:1618:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1588:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/stewart/cloud/cdk_cloud/node_modules/ts-node/src/index.ts:1621:12)",
+              "Module.load (node:internal/modules/cjs/loader:1282:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:1098:12)",
+              "TracingChannel.traceSync (node:diagnostics_channel:315:14)",
+              "wrapModuleLoad (node:internal/modules/cjs/loader:215:24)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:158:5)",
+              "phase4 (/Users/stewart/cloud/cdk_cloud/node_modules/ts-node/src/bin.ts:649:14)",
+              "bootstrap (/Users/stewart/cloud/cdk_cloud/node_modules/ts-node/src/bin.ts:95:10)",
+              "main (/Users/stewart/cloud/cdk_cloud/node_modules/ts-node/src/bin.ts:55:10)",
+              "Object.<anonymous> (/Users/stewart/cloud/cdk_cloud/node_modules/ts-node/src/bin.ts:800:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1504:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1588:10)",
+              "Module.load (node:internal/modules/cjs/loader:1282:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:1098:12)",
+              "TracingChannel.traceSync (node:diagnostics_channel:315:14)",
+              "wrapModuleLoad (node:internal/modules/cjs/loader:215:24)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:158:5)",
+              "node:internal/main/run_main_module:30:49"
+            ]
+          }
+        ],
+        "/CdkStack/ExistingVPC/PublicSubnet2": [
+          {
+            "type": "aws:cdk:warning",
+            "data": "No routeTableId was provided to the subnet 'subnet-00fb6887337bc4bb2'. Attempting to read its .routeTable.routeTableId will return null/undefined. (More info: https://github.com/aws/aws-cdk/pull/3171) [ack: @aws-cdk/aws-ec2:noSubnetRouteTableId]",
+            "trace": [
+              "Annotations.addMessage (/Users/stewart/cloud/cdk_cloud/node_modules/aws-cdk-lib/core/lib/annotations.js:1:1608)",
+              "Annotations.addWarningV2 (/Users/stewart/cloud/cdk_cloud/node_modules/aws-cdk-lib/core/lib/annotations.js:1:825)",
+              "new ImportedSubnet (/Users/stewart/cloud/cdk_cloud/node_modules/aws-cdk-lib/aws-ec2/lib/vpc.js:1:34578)",
+              "Function.fromSubnetAttributes (/Users/stewart/cloud/cdk_cloud/node_modules/aws-cdk-lib/aws-ec2/lib/vpc.js:1:22562)",
+              "/Users/stewart/cloud/cdk_cloud/node_modules/aws-cdk-lib/aws-ec2/lib/util.js:1:2221",
+              "Array.map (<anonymous>)",
+              "ImportSubnetGroup.import (/Users/stewart/cloud/cdk_cloud/node_modules/aws-cdk-lib/aws-ec2/lib/util.js:1:2139)",
+              "new ImportedVpc (/Users/stewart/cloud/cdk_cloud/node_modules/aws-cdk-lib/aws-ec2/lib/vpc.js:1:31644)",
+              "Function.fromVpcAttributes (/Users/stewart/cloud/cdk_cloud/node_modules/aws-cdk-lib/aws-ec2/lib/vpc.js:1:8213)",
+              "new CdkTypescriptStack (/Users/stewart/cloud/cdk_cloud/lib/cdk_cloud-stack.ts:25:33)",
+              "Object.<anonymous> (/Users/stewart/cloud/cdk_cloud/bin/cdk_cloud.ts:7:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1504:14)",
+              "Module.m._compile (/Users/stewart/cloud/cdk_cloud/node_modules/ts-node/src/index.ts:1618:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1588:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/stewart/cloud/cdk_cloud/node_modules/ts-node/src/index.ts:1621:12)",
+              "Module.load (node:internal/modules/cjs/loader:1282:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:1098:12)",
+              "TracingChannel.traceSync (node:diagnostics_channel:315:14)",
+              "wrapModuleLoad (node:internal/modules/cjs/loader:215:24)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:158:5)",
+              "phase4 (/Users/stewart/cloud/cdk_cloud/node_modules/ts-node/src/bin.ts:649:14)",
+              "bootstrap (/Users/stewart/cloud/cdk_cloud/node_modules/ts-node/src/bin.ts:95:10)",
+              "main (/Users/stewart/cloud/cdk_cloud/node_modules/ts-node/src/bin.ts:55:10)",
+              "Object.<anonymous> (/Users/stewart/cloud/cdk_cloud/node_modules/ts-node/src/bin.ts:800:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1504:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1588:10)",
+              "Module.load (node:internal/modules/cjs/loader:1282:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:1098:12)",
+              "TracingChannel.traceSync (node:diagnostics_channel:315:14)",
+              "wrapModuleLoad (node:internal/modules/cjs/loader:215:24)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:158:5)",
+              "node:internal/main/run_main_module:30:49"
+            ]
+          }
+        ],
+        "/CdkStack/cdkTypescriptInstance/InstanceProfile": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdkTypescriptInstanceInstanceProfileAF2EEB73"
+          }
+        ],
+        "/CdkStack/cdkTypescriptInstance/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdkTypescriptInstanceA5F933D3"
+          }
+        ],
+        "/CdkStack/InstanceId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "InstanceId"
+          }
+        ],
+        "/CdkStack/InstancePublicIP": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "InstancePublicIP"
+          }
+        ],
+        "/CdkStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/CdkStack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/CdkStack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "CdkStack"
+    },
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    }
+  }
+}
