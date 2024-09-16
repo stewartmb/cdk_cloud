@@ -42,7 +42,7 @@ export class CdkTypescriptStack extends Stack {
     const instance = new ec2.Instance(this, 'cdkTypescriptInstance', {
       instanceType: new ec2.InstanceType('t2.micro'),
       machineImage: ec2.MachineImage.genericLinux({
-        'us-east-1b': 'ami-0655c55da1774839a',
+        'us-east-1': 'ami-0aa28dab1f2852040',
       }),
       vpc: existingVpc,
       securityGroup: securityGroup1,
@@ -64,3 +64,5 @@ export class CdkTypescriptStack extends Stack {
     });
   }
 }
+
+
